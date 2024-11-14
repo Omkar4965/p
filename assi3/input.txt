@@ -1,0 +1,15 @@
+MACRO
+M3 &A, &B=AREG, &C=
+LOAD &B, &A
+ADD &B, ='10'
+STORE &C, &B
+MEND
+MACRO
+M4 &X, &Y, &Z=BREG
+MOV &Z, &X
+SUB &Z, &Y
+MEND
+START 200
+M3 50, &C=CREG
+M4 30, 40, &Z=AREG
+END
